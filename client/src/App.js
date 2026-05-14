@@ -253,7 +253,6 @@ function App() {
         <h1 data-text="智能小助手">智能小助手</h1>
       </header>
       <div className="chat-container">
-        <div className="decoration-element"></div>
         <div className="messages">
           {messages.length === 0 && (
             <div className="welcome-message">

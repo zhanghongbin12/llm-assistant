@@ -11,50 +11,6 @@ body {
   color: #e0e0e0;
   line-height: 1.6;
   position: relative;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(circle at 20% 35%, rgba(79, 174, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 75% 65%, rgba(86, 204, 242, 0.1) 0%, transparent 50%),
-    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(79, 174, 255, 0.05)' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"),
-    linear-gradient(135deg, #121212 0%, #1e2a38 100%);
-  background-size: 100% 100%, 100% 100%, 300px 300px, 100% 100%;
-  background-position: 0 0, 0 0, 0 0, 0 0;
-  z-index: -1;
-}
-
-/* 添加动画格子背景 */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(rgba(18, 18, 18, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 50%, rgba(0, 0, 0, 0.02) 50%);
-  background-size: 60px 60px;
-  z-index: -1;
-  opacity: 0.3;
-  animation: backgroundMove 20s linear infinite;
-}
-
-@keyframes backgroundMove {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 60px 60px;
-  }
 }
 
 /* 应用容器 */
@@ -82,33 +38,9 @@ body::after {
   font-size: 2.5rem;
   letter-spacing: 2px;
   font-weight: 700;
-  text-shadow: 0 0 15px rgba(79, 174, 255, 0.5);
+  text-shadow: 0 0 12px rgba(79, 174, 255, 0.35);
   position: relative;
   display: inline-block;
-}
-
-.app-header h1::before {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  color: transparent;
-  text-shadow: 0 0 20px rgba(79, 174, 255, 0.8);
-  animation: glowPulse 3s ease-in-out infinite alternate;
-}
-
-@keyframes glowPulse {
-  0% {
-    opacity: 0.3;
-    filter: blur(10px);
-  }
-  100% {
-    opacity: 0.7;
-    filter: blur(15px);
-  }
 }
 
 .app-header h1::after {
@@ -128,8 +60,7 @@ body::after {
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: rgba(18, 18, 18, 0.7);
-  backdrop-filter: blur(10px);
+  background-color: #1a1d24;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   padding: 25px;
@@ -138,92 +69,6 @@ body::after {
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   position: relative;
-  animation: fadeInUp 0.5s ease-out forwards;
-}
-
-/* 添加科技感装饰元素 */
-.chat-container::after {
-  content: '';
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: 
-    radial-gradient(circle at center, rgba(79, 174, 255, 0.1) 0%, transparent 70%),
-    conic-gradient(transparent 0deg, transparent 220deg, rgba(79, 174, 255, 0.5) 250deg, transparent 300deg);
-  opacity: 0.7;
-  animation: rotate 10s linear infinite;
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* 左下角装饰 */
-.chat-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #3498db, #56CCF2, transparent);
-  z-index: 1;
-  animation: shimmer 3s infinite linear;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -1000px;
-  }
-  100% {
-    background-position: 1000px;
-  }
-}
-
-.chat-container .decoration-element {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(79, 174, 255, 0.3);
-  border-radius: 8px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.chat-container .decoration-element::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background: rgba(79, 174, 255, 0.2);
-  border-radius: 4px;
-  animation: pulse 3s infinite alternate;
-}
-
-/* 输入表单装饰 */
-.input-form::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(79, 174, 255, 0.7), transparent);
-  animation: shimmer 3s infinite linear;
-}
-
-@keyframes pulse {
-  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
-  100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
 }
 
 /* 修改消息样式，增加更多科技感 */
@@ -246,18 +91,6 @@ body::after {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.message.user::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transform: translateX(-100%);
-  animation: shimmerMessage 3s infinite;
-}
-
 .message.ai {
   align-self: flex-start;
   background-color: rgba(40, 44, 52, 0.8);
@@ -276,12 +109,6 @@ body::after {
   height: 100%;
   background: linear-gradient(to bottom, transparent, #4faefd, transparent);
   opacity: 0.5;
-}
-
-@keyframes shimmerMessage {
-  0% { transform: translateX(-100%); }
-  50% { transform: translateX(100%); }
-  100% { transform: translateX(100%); }
 }
 
 /* 消息区域 */
@@ -319,8 +146,7 @@ body::after {
   margin: auto;
   padding: 40px 20px;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -347,24 +173,12 @@ body::after {
   width: calc(100% - 60px);
   max-width: 960px;
   padding: 15px 20px;
-  background-color: rgba(32, 39, 55, 0.9);
+  background-color: #202737;
   border-radius: 16px;
   border: 1px solid rgba(79, 174, 255, 0.3);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(79, 174, 255, 0.2);
-  backdrop-filter: blur(10px);
   z-index: 100;
-  transition: all 0.3s ease;
-}
-
-.input-form::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(79, 174, 255, 0.7), transparent);
-  animation: shimmer 3s infinite linear;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* 添加输入框聚焦时的效果 */
@@ -455,26 +269,6 @@ button:disabled {
   transition: none;
   position: relative;
   overflow: hidden;
-}
-
-.message.streaming::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #4faefd, transparent);
-  animation: loading 1.5s infinite;
-}
-
-@keyframes loading {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
 }
 
 /* 错误消息样式 */
@@ -639,14 +433,3 @@ button:disabled {
     padding: 10px 20px;
   }
 }
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} 

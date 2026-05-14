@@ -29,7 +29,7 @@ const llm = new ChatOpenAI({
     }
   },
   temperature: 0.7,
-  model: "deepseek/deepseek-r1:free", // 使用 OpenRouter 上可用的模型
+  model: "z-ai/glm-4.5-air:free", // 使用 OpenRouter 上可用的模型
   streaming: true, // 启用流式输出
   maxTokens: 1000, // 最大令牌数
 });
