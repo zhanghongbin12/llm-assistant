@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { getApiUrl } from './config';
 import './App.css';
 
 function App() {
@@ -126,7 +127,7 @@ function App() {
     try {
       // 创建 SSE 连接
       const encodedMessage = encodeURIComponent(input);
-      const apiUrl = `/api/chat-stream?message=${encodedMessage}`;
+      const apiUrl = getApiUrl(`/api/chat-stream?message=${encodedMessage}`);
       
       eventSourceRef.current = new EventSource(apiUrl);
       

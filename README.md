@@ -127,3 +127,8 @@ my-llm/
 - **Backend**: Node.js, Express
 - **LLM Integration**: LangChain, OpenAI
 - **Other**: dotenv, cors 
+
+## 部署网站
+
+- 前端 `https://app.netlify.com/`
+- 后端 `https://dashboard.render.com/`
