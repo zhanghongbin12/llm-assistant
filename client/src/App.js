@@ -251,14 +251,14 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1 data-text="智能小助手">智能小助手</h1>
+        <h1>智能小助手</h1>
       </header>
       <div className="chat-container">
         <div className="messages">
           {messages.length === 0 && (
             <div className="welcome-message">
               <h2>欢迎使用智能小助手！</h2>
-              <p>问我任何问题...</p>
+              <p>请向我提问，我会为您提供帮助😊</p>
             </div>
           )}
           {messages.map((message, index) => (
@@ -280,21 +280,19 @@ function App() {
           ))}
           <div ref={messagesEndRef} />
         </div>
+        <form className="input-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="请输入您的问题..."
+            disabled={isLoading}
+          />
+          <button type="submit" disabled={isLoading || !input.trim()}>
+            发送
+          </button>
+        </form>
       </div>
-      
-      {/* 将输入框移到聊天容器外部 */}
-      <form className="input-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="请输入您的问题..."
-          disabled={isLoading}
-        />
-        <button type="submit" disabled={isLoading || !input.trim()}>
-          发送
-        </button>
-      </form>
     </div>
   );
 }
