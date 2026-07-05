@@ -130,5 +130,6 @@ my-llm/
 
 ## 部署网站
 
-- 前端 `https://app.netlify.com/`
-- 后端 `https://dashboard.render.com/`
+- 前端 `https://zhanghongbin12.github.io/llm-assistant/`
+- 后端 `https://llmtest-tmkgaxlhrk.cn-hangzhou.fcapp.run`
+`
