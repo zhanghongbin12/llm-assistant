@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const dotenv = require('dotenv');
 const { ChatOpenAI } = require('@langchain/openai');
 const { PromptTemplate } = require('@langchain/core/prompts');
@@ -14,7 +15,21 @@ const openRouterHeaders = {
   'X-Title': 'LLM Chat Demo',
 };
 
-// CORS is handled by CloudBase gateway; do not set it here to avoid duplicate headers.
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://zhanghongbin12.github.io',
+  process.env.APP_URL,
+].filter(Boolean);
+
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+}));
 app.use(express.json());
 
 const llm = new ChatOpenAI({
@@ -145,6 +160,8 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`API server running on port ${PORT}`);
 });
+server.keepAliveTimeout = 0;
+server.timeout = 0;

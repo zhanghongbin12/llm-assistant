@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -e
+cd "$(dirname "$0")"
+
+export PORT="${PORT:-9000}"
+
+if command -v node >/dev/null 2>&1; then
+  exec node server.js
+fi
+
+for node_bin in \
+  /var/fc/lang/nodejs18/bin/node \
+  /var/fc/lang/nodejs20/bin/node \
+  /usr/local/bin/node \
+  /usr/bin/node
+do
+  if [ -x "$node_bin" ]; then
+    exec "$node_bin" server.js
+  fi
+done
+
+echo "Node.js runtime not found" >&2
+exit 1

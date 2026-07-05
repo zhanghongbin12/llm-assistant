@@ -1,5 +1,9 @@
 node_modules
 
+# Aliyun FC build artifacts
+deploy/aliyun-fc/pkg/
+deploy/aliyun-fc/my-llm-aliyun-fc.zip
+
 # Secrets & local env (never commit)
 .env
 .env.local
